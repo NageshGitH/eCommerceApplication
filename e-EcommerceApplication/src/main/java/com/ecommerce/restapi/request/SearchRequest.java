@@ -3,10 +3,14 @@ package com.ecommerce.restapi.request;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties
-public class SearchRequest 
+public class SearchRequest  
 {
 	
+ //  @NotEmpty(message="Provide product name")
+	//@Size(max=10,min=5,message="criteria not met")
+	//@Max,@Past,@Future(date)
    private String productName;
+   //@NotEmpty(message="Provide category name")
    private String categoryName;
 public String getProductName() {
 	return productName;

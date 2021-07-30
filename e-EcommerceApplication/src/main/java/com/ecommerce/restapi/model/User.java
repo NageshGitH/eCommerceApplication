@@ -12,7 +12,14 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name="user")
 public class User
 {
@@ -30,74 +37,4 @@ public class User
 	private String password;
 	@OneToMany(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
 	List<Order> orderId;
-	
-	public User() {}
-
-
-	public long getUserId() {
-		return userId;
-	}
-
-
-	public void setUserId(long userId) {
-		this.userId = userId;
-	}
-
-
-	public String getUserName() {
-		return userName;
-	}
-
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-
-	public String getEmail() {
-		return email;
-	}
-
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-
-	public long getPhoneNumber() {
-		return phoneNumber;
-	}
-
-
-	public void setPhoneNumber(long phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
-
-
-	public String getPassword() {
-		return password;
-	}
-
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-
-	/**
-	 * @return the orderId
-	 */
-	public List<Order> getOrderId() {
-		return orderId;
-	}
-
-
-	/**
-	 * @param orderId the orderId to set
-	 */
-	public void setOrderId(List<Order> orderId) {
-		this.orderId = orderId;
-	}
-
-	
 }

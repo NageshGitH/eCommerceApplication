@@ -11,7 +11,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name="order_details")
 public class OrderDetails 
 {
@@ -32,43 +39,5 @@ public class OrderDetails
 	@JoinColumn(name="order_id")
 	private Order orders;
 
-	public long getOrderDetailsId() {
-		return orderDetailsId;
-	}
-
-	public void setOrderDetailsId(long orderDetailsId) {
-		this.orderDetailsId = orderDetailsId;
-	}
-
-	public int getQuantity() {
-		return quantity;
-	}
-
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
-
-	public double getPrice() {
-		return price;
-	}
-
-	public void setPrice(double price) {
-		this.price = price;
-	}
-
-	public Product getProduct() {
-		return product;
-	}
-
-	public void setProduct(Product product) {
-		this.product = product;
-	}
-
-	public Order getOrders() {
-		return orders;
-	}
-
-	public void setOrders(Order orders) {
-		this.orders = orders;
-	}
+	
 }

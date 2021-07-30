@@ -18,7 +18,14 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name="orders")
 public class Order {
 
@@ -40,50 +47,5 @@ public class Order {
 	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	@JoinColumn(name="order_id")
 	private List<OrderDetails> orderList = new ArrayList<>();
-	
-	
-	public Order() {}
-
-	public long getOrderId() {
-		return orderId;
-	}
-
-	public void setOrderId(long orderId) {
-		this.orderId = orderId;
-	}
-	
-	public Date getDatetime() {
-		return datetime;
-	}
-
-	public void setDatetime(Date datetime) {
-		this.datetime = datetime;
-	}
-
-	public double getTotalPrice() {
-		return totalPrice;
-	}
-
-	
-
-	public void setTotalPrice(double totalPrice) {
-		this.totalPrice = totalPrice;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
-	public List<OrderDetails> getOrderList() {
-		return orderList;
-	}
-
-	public void setOrderList(List<OrderDetails> orderList) {
-		this.orderList = orderList;
-	}
 	
 }

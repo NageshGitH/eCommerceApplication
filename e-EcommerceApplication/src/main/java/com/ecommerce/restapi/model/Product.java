@@ -10,13 +10,13 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
-@Setter
-@Getter
+@Data
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name="product")
 public class Product 
 {
@@ -37,78 +37,5 @@ public class Product
 	@ManyToOne
 	@JoinColumn(name="category_id")
 	private Category category;
-	
-	
-	public Product(Long productId, String productName, String productDescription, double productPrice,
-			int productQuantity) {
-		super();
-		this.productId = productId;
-		this.productName = productName;
-		this.productDescription = productDescription;
-		this.productPrice = productPrice;
-		this.productQuantity = productQuantity;
-	}
-
-    public Product()
-    {
-    	
-    }
-	public Long getProductId() {
-		return productId;
-	}
-	public void setProductId(Long productId) {
-		this.productId = productId;
-	}
-	public String getProductName() {
-		return productName;
-	}
-	public void setProductName(String productName) {
-		this.productName = productName;
-	}
-	public String getProductDescription() {
-		return productDescription;
-	}
-	public void setProductDescription(String productDescription) {
-		this.productDescription = productDescription;
-	}
-
-
-	public double getProductPrice() {
-		return productPrice;
-	}
-
-
-	public void setProductPrice(double productPrice) {
-		this.productPrice = productPrice;
-	}
-
-
-	public int getProductQuantity() {
-		return productQuantity;
-	}
-
-
-	public void setProductQuantity(int productQuantity) {
-		this.productQuantity = productQuantity;
-	}
-
-
-	@Override
-	public String toString() {
-		return "Product [productId=" + productId + ", productName=" + productName + ", productDescription="
-				+ productDescription + ", productPrice=" + productPrice + ", productQuantity=" + productQuantity + "]";
-	}
-
-
-	public Category getCategory() {
-		return category;
-	}
-
-
-	public void setCategory(Category category) {
-		this.category = category;
-	}
-	
-	
 	
 }
